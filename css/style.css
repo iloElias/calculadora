@@ -2,4 +2,150 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #2c2c2c;
+
+    min-width: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 7fr 10fr;
+
+    gap: 5px;
+
+    height: 95%;
+
+    border-radius: 15px;
+    background-color: black;
+    aspect-ratio: 195/422;
+    overflow: hidden;
+}
+
+.display {
+    position: relative;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.buttons {
+    margin: 5px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.content-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.last-content-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numeric-btn {
+    background-color: #2c2c2c;
+}
+
+
+
+div .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 1.5em;
+    border-radius: 1000px;
+}
+
+.top-math-btn {
+    background-color: #9e9e9e;
+    color: black;
+}
+
+.math-operation-btn {
+    background-color: #ff960f;
+    color: white;
+}
+
+div .zero-btn {
+    padding: 0 0 0 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.button {
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    border: none;
+}
+
+.numeric-btn:not(:active) {
+    background-color: #2c2c2c;
+    transition: 0.4s;
+}
+
+.numeric-btn:active {
+    background-color: gray;
+    transition: 0.05s;
+}
+
+.times-btn {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.math-operation-btn:not(:active) {
+    background-color: #ff960f;
+    color: white;
+    fill: white;
+    transition: 0.4s;
+}
+
+.math-operation-btn:active {
+    background-color: rgb(255, 246, 246);
+    color: black;
+    fill: black;
+    transition: 0.05s;
+}
+
+.top-math-btn:not( :active) {
+    filter: invert(0%);
+    transition: 0.4s;
+}
+
+.top-math-btn:active {
+    filter: invert(100%);
+    transition: 0.05s;
+}
+
+#result-text {
+    max-width: 100%;
+
+    font-size: 3.5em;
+    font-weight: lighter;
+    margin: 0 20px -10px 10px;
 }
