@@ -117,14 +117,15 @@ for (let i in buttons) {
 }
 
 clear.addEventListener("click", function () {
-    if (resultText.innerText.length != 0) {
+    if (clear.innerText == "AC") {
         resultText.innerText = ""
-        if (value1 != undefined && value2 == undefined) {
-            clear.innerText = "AC"
-        } else if (value1 == undefined && value2 == undefined) {
-            value1 = undefined
-            clear.innerText = "C"
-        }
+        value1 = undefined
+        value2 = undefined
+        clear.innerText = "C"
+    } else if (clear.innerText = "C") {
+        resultText.innerText = ""
+        value2 = undefined
+        clear.innerText = "AC"
     }
 })
 
