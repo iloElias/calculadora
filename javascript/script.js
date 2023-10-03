@@ -6,6 +6,7 @@ let value1, value2
 let operatos = "+-*/"
 let operation = ""
 let firstValueInsert = false
+let fastOperation = false
 
 function parseOperation(val1, val2, mathOperation) {
     let result = ""
@@ -98,11 +99,13 @@ for (let i in buttons) {
                     value2 = parseFloat(resultText.innerText.replace(",", "."))
                 }
 
-                if (value1 != undefined && value2 != undefined && operation != "") {
-                    parseOperation(value1, value2, operation)
-                    value1 = parseFloat(resultText.innerText.replace(",", "."))
-                    value2 = undefined
-                    operation = ""
+                if (fastOperation) {
+                    if (value1 != undefined && value2 != undefined && operation != "") {
+                        parseOperation(value1, value2, operation)
+                        value1 = parseFloat(resultText.innerText.replace(",", "."))
+                        value2 = undefined
+                        operation = ""
+                    }
                 }
 
                 if (operation == "") {

@@ -127,8 +127,8 @@ div .zero-btn {
 
 .math-operation-btn:active {
     background-color: rgb(255, 246, 246);
-    color: black;
-    fill: black;
+    color: #ff960f;
+    fill: #ff960f;
     transition: 0.05s;
 }
 
