@@ -74,6 +74,10 @@ for (let i in buttons) {
                     }
                 }
                 clear.innerText = "C"
+
+                if (document.getElementById("selected-operation")) {
+                    document.getElementById("selected-operation").removeAttribute("id")
+                }
                 changeText()
 
                 firstValueInsert = false
@@ -130,6 +134,9 @@ for (let i in buttons) {
                     parseOperation(value1, value2, operation)
                     value1 = undefined
                     value2 = undefined
+                    if (document.getElementById("selected-operation")) {
+                        document.getElementById("selected-operation").removeAttribute("id")
+                    }
                     operation = ""
                 }
 
@@ -143,6 +150,17 @@ for (let i in buttons) {
             if (resultText.innerText != "") {
                 if (resultText.innerText[resultText.innerText.length - 1] == ",") {
                     resultText.innerText += "0"
+                }
+
+                operation = buttons[i].value
+                let mathSelect = document.getElementsByClassName("math-select")
+                if (document.getElementById("selected-operation")) {
+                    document.getElementById("selected-operation").removeAttribute("id")
+                }
+                for (let index in mathSelect) {
+                    if (mathSelect[index].value == buttons[i].value) {
+                        mathSelect[index].setAttribute("id", "selected-operation")
+                    }
                 }
 
                 if (value1 == undefined && value2 == undefined) {
@@ -172,7 +190,6 @@ for (let i in buttons) {
                     value2 = undefined
                 }
 
-                operation = buttons[i].value
                 firstValueInsert = true
             }
             playClick()
@@ -194,6 +211,9 @@ clear.addEventListener("click", function () {
         value1 = undefined
         value2 = undefined
         clear.innerText = "C"
+        if (document.getElementById("selected-operation")) {
+            document.getElementById("selected-operation").removeAttribute("class")
+        }
     }
 
     textBox.style.fontSize = "10vh"

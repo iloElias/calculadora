@@ -156,3 +156,10 @@ div .zero-btn {
 #revert-signal img {
     height: 5vh;
 }
+
+#selected-operation {
+    background-color: rgb(255, 246, 246);
+    color: #ff960f;
+    fill: #ff960f;
+    transition: 0.05s;
+}
