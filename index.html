@@ -15,7 +15,7 @@
 
 <body>
     <main>
-        <div class="display">
+        <div id="display" class="display">
             <h4 id="result-text"></h4>
         </div>
         <div class="buttons">
@@ -45,13 +45,17 @@
                 <button value="+" class="button math-operation-btn">+</button>
             </div>
             <div class="last-content-row">
-                <button value="0" id="zero" class="button numeric-btn zero-btn">0</button>
+                <button value="0" id="zero" class="button numeric-btn zero-btn">
+                    <div>0</div>
+                    <div></div>
+                </button>
                 <button value="," class="button numeric-btn">,</button>
                 <button value="equals" class="button math-operation-btn">=</button>
             </div>
         </div>
     </main>
     <script src="./javascript/script.js"></script>
+    <script src="./javascript/sizeAjustScript.js"></script>
 </body>
 
 </html>
