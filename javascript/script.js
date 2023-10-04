@@ -10,8 +10,10 @@ let firstValueInsert = false
 let fastOperation = false
 
 function playClick() {
-    var audio = document.getElementById("click-sound");
-    audio.play();
+    if (document.getElementById("click-sound")) {
+        let audio = document.getElementById("click-sound");
+        audio.play();
+    }
 }
 
 function formatOutput(output) {
@@ -35,6 +37,7 @@ function formatOutput(output) {
 
 function parseOperation(val1, val2, mathOperation) {
     let result = ""
+    console.log(`${val1} ${mathOperation} ${val2}`)
     if (mathOperation == "+") {
         result = `${(val1 + val2)}`
     } else if (mathOperation == "-") {
@@ -110,14 +113,22 @@ for (let i in buttons) {
                 }
 
                 if (value1 == undefined && value2 == undefined) {
-                    value1 = parseFloat(resultText.innerText.replaceAll(".", "").replace(",", "."))
+                    let aux = resultText.innerText.replaceAll(".", "")
+                    if (aux.includes(",")) {
+                        aux = aux.replace(",", ".")
+                    }
+                    value1 = parseFloat(aux)
                 } else if (value1 != undefined && value2 == undefined) {
-                    value2 = parseFloat(resultText.innerText.replaceAll(".", "").replace(",", "."))
+                    let aux = resultText.innerText.replaceAll(".", "")
+                    if (aux.includes(",")) {
+                        aux = aux.replace(",", ".")
+                    }
+                    value2 = parseFloat(aux)
                 }
 
                 if (value1 != undefined && value2 != undefined && operation != "") {
                     parseOperation(value1, value2, operation)
-                    value1 = parseFloat(resultText.innerText.replace(".", "").replace(",", "."))
+                    value1 = undefined
                     value2 = undefined
                     operation = ""
                 }
@@ -135,15 +146,23 @@ for (let i in buttons) {
                 }
 
                 if (value1 == undefined && value2 == undefined) {
-                    value1 = parseFloat(resultText.innerText.replaceAll(".", "").replace(",", "."))
+                    let aux = resultText.innerText.replaceAll(".", "")
+                    if (aux.includes(",")) {
+                        aux = aux.replace(",", ".")
+                    }
+                    value1 = parseFloat(aux)
                 } else if (value1 != undefined && value2 == undefined) {
-                    value2 = parseFloat(resultText.innerText.replaceAll(".", "").replace(",", "."))
+                    let aux = resultText.innerText.replaceAll(".", "")
+                    if (aux.includes(",")) {
+                        aux = aux.replace(",", ".")
+                    }
+                    value2 = parseFloat(aux)
                 }
 
                 if (fastOperation) {
                     if (value1 != undefined && value2 != undefined && operation != "") {
                         parseOperation(value1, value2, operation)
-                        value1 = parseFloat(resultText.innerText.replace(".", "").replace(",", "."))
+                        value1 = undefined
                         value2 = undefined
                         operation = ""
                     }

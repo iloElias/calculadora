@@ -7,6 +7,5 @@ function changeText() {
     while (textBox.offsetWidth > display.offsetWidth - (display.offsetWidth / 9.5)) {
         size -= 0.1
         textBox.style.fontSize = `${size}vh`
-        console.log("Test")
     }
 }
