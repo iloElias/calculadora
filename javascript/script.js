@@ -66,7 +66,9 @@ for (let i in buttons) {
                 if (resultText.innerText.length = 1 && resultText.innerText == "0" && !firstValueInsert) {
                     resultText.innerText = buttons[i].value
                 } else {
-                    resultText.innerText += buttons[i].value
+                    if (formatOutput((resultText.innerText + buttons[i].value).replaceAll(".", "")).length <= 11) {
+                        resultText.innerText = formatOutput((resultText.innerText + buttons[i].value).replaceAll(".", ""))
+                    }
                 }
                 clear.innerText = "C"
                 changeText()
@@ -108,9 +110,9 @@ for (let i in buttons) {
                 }
 
                 if (value1 == undefined && value2 == undefined) {
-                    value1 = parseFloat(resultText.innerText.replace(".", "").replace(",", "."))
+                    value1 = parseFloat(resultText.innerText.replaceAll(".", "").replace(",", "."))
                 } else if (value1 != undefined && value2 == undefined) {
-                    value2 = parseFloat(resultText.innerText.replace(".", "").replace(",", "."))
+                    value2 = parseFloat(resultText.innerText.replaceAll(".", "").replace(",", "."))
                 }
 
                 if (value1 != undefined && value2 != undefined && operation != "") {
@@ -133,15 +135,15 @@ for (let i in buttons) {
                 }
 
                 if (value1 == undefined && value2 == undefined) {
-                    value1 = parseFloat(resultText.innerText.replace(",", "."))
+                    value1 = parseFloat(resultText.innerText.replaceAll(".", "").replace(",", "."))
                 } else if (value1 != undefined && value2 == undefined) {
-                    value2 = parseFloat(resultText.innerText.replace(",", "."))
+                    value2 = parseFloat(resultText.innerText.replaceAll(".", "").replace(",", "."))
                 }
 
                 if (fastOperation) {
                     if (value1 != undefined && value2 != undefined && operation != "") {
                         parseOperation(value1, value2, operation)
-                        value1 = parseFloat(resultText.innerText.replace(",", "."))
+                        value1 = parseFloat(resultText.innerText.replace(".", "").replace(",", "."))
                         value2 = undefined
                         operation = ""
                     }
