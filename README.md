@@ -10,8 +10,3 @@ Um clone da calculadora padrão do iOS, escrito em Swift.
 - Operações de exponencial.
 - Símbolos decimais e decimais.
 - Histórico de cálculos.
-
-## Instalação
-
-1. Abra o Terminal e navegue até o diretório em que deseja clonar o repositório.
-2. Execute o seguinte comando:
