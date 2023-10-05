@@ -167,22 +167,12 @@ div .zero-btn {
     transition: 0.04s;
 }
 
-@media only screen and (max-device-width: 640px) {
+@media only screen and (max-device-width: 768px) {
     body {
         background-color: black;
     }
 
     main {
         height: 100%;
-    }
-}
-
-@media only screen and (max-device-width: 768px) {
-    body {
-        background-color: rgb(23, 23, 23);
-    }
-
-    main {
-        height: 97.5%;
     }
 }
