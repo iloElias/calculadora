@@ -9,3 +9,9 @@ function changeText() {
         textBox.style.fontSize = `${size}vh`
     }
 }
+
+var elems = document.querySelectorAll(".button");
+var index = 0, length = elems.length;
+for (; index < length; index++) {
+    elems[index].style.transition = "0.1s";
+}

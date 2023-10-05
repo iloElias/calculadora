@@ -1,7 +1,6 @@
 let buttons = document.getElementsByClassName("button")
 let resultText = document.getElementById("result-text")
 let clear = document.getElementById("clear")
-let clearText = false
 
 let value1, value2
 let operatos = "+-*/"
@@ -198,21 +197,19 @@ for (let i in buttons) {
 }
 
 clear.addEventListener("click", function () {
-    if (clear.innerText == "C" && resultText.innerText != "0") {
+    if (clear.innerText == "C") {
         resultText.innerText = "0"
         value2 = undefined
-
-        if (value1 != undefined) {
-            clear.innerText = "AC"
+        clear.innerText = "AC"
+    } else if (clear.innerText == "AC") {
+        resultText.innerText = "0"
+        if (value1 || value2) {
+            value1 = undefined
+            value2 = undefined
         }
-        clearText = true
-    } else if (clear.innerText == "AC" && value1 != undefined && clearText) {
-        resultText.innerText = "0"
-        value1 = undefined
-        value2 = undefined
-        clear.innerText = "C"
         if (document.getElementById("selected-operation")) {
             document.getElementById("selected-operation").removeAttribute("class")
+            operation = ""
         }
     }
 

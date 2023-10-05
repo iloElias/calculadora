@@ -106,7 +106,7 @@ div .zero-btn {
 
 .numeric-btn:active {
     background-color: gray;
-    transition: 0.05s;
+    transition: 0.04s;
 }
 
 .times-btn {
@@ -123,7 +123,7 @@ div .zero-btn {
     background-color: rgb(255, 246, 246);
     color: #ff960f;
     fill: #ff960f;
-    transition: 0.05s;
+    transition: 0.04s;
 }
 
 .top-math-btn:not( :active) {
@@ -132,7 +132,7 @@ div .zero-btn {
 
 .top-math-btn:active {
     filter: invert(100%);
-    transition: 0.05s;
+    transition: 0.04s;
 }
 
 #result-text {
@@ -161,5 +161,5 @@ div .zero-btn {
     background-color: rgb(255, 246, 246);
     color: #ff960f;
     fill: #ff960f;
-    transition: 0.05s;
+    transition: 0.04s;
 }
