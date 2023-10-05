@@ -166,3 +166,9 @@ div .zero-btn {
     fill: #ff960f;
     transition: 0.04s;
 }
+
+@media only screen and (hover: none) and (pointer: coarse) {
+    main {
+        height: 100%;
+    }
+}
