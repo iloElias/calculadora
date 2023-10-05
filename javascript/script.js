@@ -36,7 +36,6 @@ function formatOutput(output) {
 
 function parseOperation(val1, val2, mathOperation) {
     let result = ""
-    console.log(`${val1} ${mathOperation} ${val2}`)
     if (mathOperation == "+") {
         result = `${(val1 + val2)}`
     } else if (mathOperation == "-") {
