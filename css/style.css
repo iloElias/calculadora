@@ -4,6 +4,7 @@
     box-sizing: border-box;
     color: white;
     font-family: 'Poppins', sans-serif;
+    user-select: none;
 }
 
 html,
@@ -146,6 +147,8 @@ div .zero-btn {
     font-size: 10vh;
     font-weight: lighter;
     margin: 0 1.5vh 0 1.5vh;
+
+    user-select: auto;
 }
 
 #zero {
