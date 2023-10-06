@@ -64,6 +64,7 @@ for (let i in buttons) {
                 if (firstValueInsert && resultText.innerText != "") {
                     resultText.innerText = ""
                 }
+
                 if (resultText.innerText.length = 1 && resultText.innerText == "0" && !firstValueInsert) {
                     resultText.innerText = buttons[i].value
                 } else {
@@ -71,11 +72,15 @@ for (let i in buttons) {
                         resultText.innerText = formatOutput((resultText.innerText + buttons[i].value).replaceAll(".", ""))
                     }
                 }
-                clear.innerText = "C"
 
                 if (document.getElementById("selected-operation")) {
                     document.getElementById("selected-operation").removeAttribute("id")
                 }
+
+                if (resultText.innerText != "0") {
+                    clear.innerText = "C"
+                }
+
                 changeText()
 
                 firstValueInsert = false
